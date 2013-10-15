@@ -1,0 +1,10 @@
+<div class="todos">
+  <% @todos.each do |todo| %>
+    <li class="<%=todo.status %>"><%=todo.task%></li>
+  <% end %>
+</div>
+
+<form method="POST" action="/todos">
+  <input id="new_todo_task" type="text" name="todo[task]" />
+  <button>Add Todo</button>
+</form>
