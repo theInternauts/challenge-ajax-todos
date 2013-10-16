@@ -8,3 +8,9 @@ require 'capybara/rspec'
 ActiveRecord::Base.logger = Logger.new('/dev/null')
 
 Capybara.app = Sinatra::Application
+
+RSpec.configure do |config|
+  config.before do
+    Todo.destroy_all
+  end
+end

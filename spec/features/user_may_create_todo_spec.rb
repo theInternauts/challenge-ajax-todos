@@ -5,8 +5,9 @@ feature "Creating TODOs" do
     fill_in :new_todo_task, with: "Thing to do"
     click_on "Add Todo"
 
-    within ".todos" do
+    within ".available-todos" do
       expect(page).to have_content("Thing to do")
     end
+    expect(Todo.last.task).to eql "Thing to do"
   end
 end

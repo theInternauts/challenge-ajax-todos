@@ -1,6 +1,10 @@
-<div class="todos">
-  <% @todos.each do |todo| %>
-    <li class="<%=todo.status %>"><%=todo.task%></li>
+<div class="available-todos">
+  <% available_todos.each do |todo| %>
+    <div id="todo-<%=todo.id%>"><%=todo.task%>
+      <form method="POST" action="/todos/<%=todo.id%>/complete">
+        <button>Complete!</button>
+      </form>
+    </div>
   <% end %>
 </div>
 
@@ -8,3 +12,9 @@
   <input id="new_todo_task" type="text" name="todo[task]" />
   <button>Add Todo</button>
 </form>
+
+<div class="completed-todos">
+  <% completed_todos.each do |todo| %>
+    <li id="todo-<%=todo.id%>" class="<%=todo.status %>"><%=todo.task%></li>
+  <% end %>
+</div>

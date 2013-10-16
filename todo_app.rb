@@ -22,3 +22,23 @@ post '/todos' do
   end
 end
 
+post "/todos/:id/complete" do
+  todo = Todo.find(params[:id])
+  todo.update_attributes(status: "completed")
+  if request.xhr?
+
+  else
+    redirect '/'
+  end
+end
+
+
+helpers do
+  def available_todos
+    Todo.where(:status => "available")
+  end
+
+  def completed_todos
+    Todo.where(:status => "completed")
+  end
+end
