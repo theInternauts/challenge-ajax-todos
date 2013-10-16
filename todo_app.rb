@@ -5,6 +5,15 @@ set :database, "sqlite3:///db/todo_dev.sqlite3"
 
 class Todo < ActiveRecord::Base
 
+  scope :available, -> { where(status: "available") }
+  scope :completed, -> { where(status: "completed") }
+  def complete!
+    update_attributes(status: "completed")
+  end
+
+  def complete?
+    status == "completed"
+  end
 end
 
 get '/' do
@@ -23,8 +32,7 @@ post '/todos' do
 end
 
 post "/todos/:id/complete" do
-  todo = Todo.find(params[:id])
-  todo.update_attributes(status: "completed")
+  Todo.find(params[:id]).complete!
   if request.xhr?
 
   else
@@ -35,10 +43,10 @@ end
 
 helpers do
   def available_todos
-    Todo.where(:status => "available")
+    Todo.available
   end
 
   def completed_todos
-    Todo.where(:status => "completed")
+    Todo.completed
   end
 end

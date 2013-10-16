@@ -17,6 +17,6 @@ feature "Completing TODOs", js: true do
     end
 
     todo.reload
-    expect(todo.status).to eql "completed"
+    expect(todo).to be_complete
   end
 end
