@@ -22,6 +22,8 @@ The feature tests should not need to be changed in order to add AJAX
 
 ## Recommended Resources
 
+1. [Testing Javascript Apps with Capybara](https://github.com/jnicklas/capybara#selecting-the-driver)
+1. [Capybara and Selenium](https://github.com/jnicklas/capybara#selenium)
 1. [jQuery.post](http://api.jquery.com/jQuery.post/)
 1. [`$('form').serialize`](http://api.jquery.com/serialize/)
 1. [xhr?](http://apidock.com/rails/ActionDispatch/Request/xhr%3F)
