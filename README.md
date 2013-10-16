@@ -22,6 +22,8 @@ The feature tests should not need to be changed in order to add AJAX
 
 ## Recommended Resources
 
+1. [Testing Javascript Apps with Capybara](https://github.com/jnicklas/capybara#selecting-the-driver)
+1. [Capybara and Selenium](https://github.com/jnicklas/capybara#selenium)
 1. [jQuery.post](http://api.jquery.com/jQuery.post/)
 1. [jQuery.ajax](http://api.jquery.com/jQuery.ajax/)
 1. [jqXHR](http://api.jquery.com/jQuery.ajax/#jqXHR)
