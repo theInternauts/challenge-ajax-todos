@@ -23,6 +23,10 @@ The feature tests should not need to be changed in order to add AJAX
 ## Recommended Resources
 
 1. [jQuery.post](http://api.jquery.com/jQuery.post/)
+1. [jQuery.ajax](http://api.jquery.com/jQuery.ajax/)
+1. [jqXHR](http://api.jquery.com/jQuery.ajax/#jqXHR)
+1. [jqXHR.done](http://api.jquery.com/deferred.done/)
+1. [jqXHR.fail](http://api.jquery.com/deferred.fail/)
 1. [`$('form').serialize`](http://api.jquery.com/serialize/)
 1. [xhr?](http://apidock.com/rails/ActionDispatch/Request/xhr%3F)
 1. [How not to include layout in sinatra app](http://stackoverflow.com/questions/17100942/how-to-not-include-layout-haml-in-sinatra-app)
