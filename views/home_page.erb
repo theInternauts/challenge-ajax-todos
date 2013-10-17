@@ -1,4 +1,12 @@
+  <form method="POST" action="/todos" id="todos">
+  <h1> What do you need to do?</h1>
+  <input id="new_todo_task" type="text" name="todo[task]" />
+  <button>Add Todo</button>
+</form>
+
+
 <div class="available-todos">
+  <h1>Your Current Todo List</h1>
   <% available_todos.each do |todo| %>
     <div id="todo-<%=todo.id%>"><%=todo.task%>
       <form method="POST" action="/todos/<%=todo.id%>/complete">
@@ -8,12 +16,9 @@
   <% end %>
 </div>
 
-<form method="POST" action="/todos">
-  <input id="new_todo_task" type="text" name="todo[task]" />
-  <button>Add Todo</button>
-</form>
 
 <div class="completed-todos">
+  <h1>Completed Todos</h1>
   <% completed_todos.each do |todo| %>
     <li id="todo-<%=todo.id%>"><%=todo.task%></li>
   <% end %>
