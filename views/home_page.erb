@@ -8,7 +8,7 @@
   <% end %>
 </div>
 
-<form method="POST" action="/todos">
+<form method="POST" action="/todos" id="add-todo">
   <input id="new_todo_task" type="text" name="todo[task]" />
   <button>Add Todo</button>
 </form>
@@ -18,3 +18,4 @@
     <li id="todo-<%=todo.id%>"><%=todo.task%></li>
   <% end %>
 </div>
+
