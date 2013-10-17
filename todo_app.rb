@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'json'
 
 set :database, "sqlite3:///db/todo_dev.sqlite3"
 
@@ -24,8 +25,8 @@ end
 post '/todos' do
   @todo = Todo.create(params[:todo])
   if request.xhr?
-  # This is how to tell if a request came in over AJAX or not
-
+    # content_type: json
+    @todo.to_json
   else
     redirect '/'
   end
@@ -34,7 +35,7 @@ end
 post "/todos/:id/complete" do
   Todo.find(params[:id]).complete!
   if request.xhr?
-
+    params
   else
     redirect '/'
   end
