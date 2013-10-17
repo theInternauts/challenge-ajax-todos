@@ -56,6 +56,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (< 1.0.0)
       websocket (~> 1.0.4)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -80,6 +82,7 @@ DEPENDENCIES
   rake
   rspec
   selenium-webdriver
+  shotgun
   sinatra
   sinatra-activerecord
   sqlite3
