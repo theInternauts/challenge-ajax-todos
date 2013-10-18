@@ -24,7 +24,7 @@ end
 post '/todos' do
   @todo = Todo.create(params[:todo])
   if request.xhr?
-  # This is how to tell if a request came in over AJAX or not
+   @todo ? "<p>"+ @todo.task + "</p>" : "creation failed"
 
   else
     redirect '/'
