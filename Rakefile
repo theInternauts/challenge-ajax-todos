@@ -9,3 +9,8 @@ begin
   task :default => :spec
 rescue LoadError
 end
+
+desc 'Start IRB with application environment loaded'
+task 'console' do
+  exec 'irb -r ./todo_app.rb'
+end
